@@ -26,10 +26,10 @@ Step 1. Add the JitPack repository to your build file
 Step 2. Add The InteractiveTextMaker Dependency
 ```
 dependencies {
-		implementation 'com.github.alonew0lfxx:InteractiveTextMaker:0.0.1'
+	        implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.0'
 }
 ```
-    
+
 ## Example Usage
 
 ```bash
