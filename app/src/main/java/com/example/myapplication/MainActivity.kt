@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.interactivetextmaker.InteractiveTextMaker
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         //
+        binding.textView.text = "How To __Make__ Clickable __Text__ In A __TextView__?"
         InteractiveTextMaker.of(binding.textView)
             .setSpecialTextColor(R.color.purple_500)
             .setSpecialTextUnderLined(true)

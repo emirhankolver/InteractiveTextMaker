@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.interactivetextmaker
 
 import android.content.Context
 import android.text.SpannableString
@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 
 class InteractiveTextMaker private constructor(
@@ -33,14 +34,14 @@ class InteractiveTextMaker private constructor(
     }
 
     fun setSpecialTextColor(@ColorRes colorId: Int): InteractiveTextMaker {
-        val color = context.getColor(colorId)
+        val color = ContextCompat.getColor(context,colorId)
         specialTextColor = color
         specialTextHighLightColor = ColorUtils.setAlphaComponent(color, 50)
         return this
     }
 
     fun setSpecialTextHighlightColor(@ColorRes color: Int): InteractiveTextMaker {
-        specialTextHighLightColor = context.getColor(color)
+        specialTextHighLightColor = ContextCompat.getColor(context,color)
         return this
     }
 
