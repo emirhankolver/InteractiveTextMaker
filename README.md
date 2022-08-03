@@ -1,6 +1,8 @@
 
 # Interactive Text Maker
 
+![Header Image](https://github.com/Alonew0lfxx/InteractiveTextMaker/blob/master/screenshots/sc2.png?raw=true)
+
 The goal of this project is to make texts in TextView clickable and also translatable easily.
 
 User separates each special word with separator characters like `"__"`
@@ -16,38 +18,39 @@ You can copy the **InteractiveTextMaker** class or add as a dependency to your p
 
 Step 1. Add the JitPack repository to your build file
 ```
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 Step 2. Add The InteractiveTextMaker Dependency
 ```
 dependencies {
-	        implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.0'
+    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.0'
 }
 ```
 
 ## Example Usage
 
 ```bash
-  class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        //
         binding.textView.text = "How To __Make__ Clickable __Text__ In A __TextView__?"
         InteractiveTextMaker.of(binding.textView)
             .setSpecialTextColor(R.color.purple_500)
+            .setSpecialTextFontFamily(R.font.bold_italic)
             .setSpecialTextUnderLined(true)
             .setOnTextClickListener {
                 when (it) {
                     0 -> Toast.makeText(this, "'Make' has been clicked", Toast.LENGTH_SHORT).show()
                     1 -> Toast.makeText(this, "'Text' has been clicked", Toast.LENGTH_SHORT).show()
-                    2 -> Toast.makeText(this, "'TextView' has been clicked", Toast.LENGTH_SHORT).show()
+                    2 -> Toast.makeText(this, "'TextView' has been clicked", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
             .initialize()
