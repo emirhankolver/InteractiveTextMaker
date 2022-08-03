@@ -9,7 +9,9 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.ColorRes
+import androidx.annotation.FontRes
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.ColorUtils
 
 class InteractiveTextMaker private constructor(
@@ -21,10 +23,16 @@ class InteractiveTextMaker private constructor(
     private var onTextClicked: ((index: Int) -> Unit) = {}
     private var specialTextColor: Int = textView.currentTextColor
     private var specialTextHighLightColor: Int = ColorUtils.setAlphaComponent(specialTextColor, 50)
+    private var specialTextFontFamily = textView.typeface
     private var underlinedSpecialText: Boolean = false
 
     fun setSpecialTextSeparator(separator: String): InteractiveTextMaker {
         specialWordSeparator = separator
+        return this
+    }
+
+    fun setSpecialTextFontFamily(@FontRes fontId: Int): InteractiveTextMaker {
+        specialTextFontFamily = ResourcesCompat.getFont(context, fontId)!!
         return this
     }
 
@@ -34,14 +42,14 @@ class InteractiveTextMaker private constructor(
     }
 
     fun setSpecialTextColor(@ColorRes colorId: Int): InteractiveTextMaker {
-        val color = ContextCompat.getColor(context,colorId)
+        val color = ContextCompat.getColor(context, colorId)
         specialTextColor = color
         specialTextHighLightColor = ColorUtils.setAlphaComponent(color, 50)
         return this
     }
 
     fun setSpecialTextHighlightColor(@ColorRes color: Int): InteractiveTextMaker {
-        specialTextHighLightColor = ContextCompat.getColor(context,color)
+        specialTextHighLightColor = ContextCompat.getColor(context, color)
         return this
     }
 
@@ -64,8 +72,7 @@ class InteractiveTextMaker private constructor(
         }
         words.forEachIndexed { index: Int, wordResult: MatchResult ->
             val startIndex = wordResult.range.first - (actionTextLength * index)
-            val endIndex =
-                wordResult.range.last - (actionTextLength * (index + 1)) + 1
+            val endIndex = wordResult.range.last - (actionTextLength * (index + 1)) + 1
             span.setSpan(
                 object : ClickableSpan() {
                     override fun onClick(p0: View) {
@@ -75,6 +82,7 @@ class InteractiveTextMaker private constructor(
                     override fun updateDrawState(ds: TextPaint) {
                         super.updateDrawState(ds)
                         ds.isUnderlineText = underlinedSpecialText
+                        ds.typeface = specialTextFontFamily
                         ds.color = specialTextColor
                     }
                 },
