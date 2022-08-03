@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.textView.text = "__Welcome__ to Interactive __Text__ Maker!\nHave a __nice__ day!"
+        binding.textView.text = "How To __Make__ Clickable __Text__ In A __TextView__?"
         InteractiveTextMaker.of(binding.textView)
             .setSpecialTextColor(R.color.purple_500)
             .setSpecialTextFontFamily(R.font.bold_italic)
