@@ -24,10 +24,16 @@ class InteractiveTextMaker private constructor(
     private var specialTextColor: Int = textView.currentTextColor
     private var specialTextHighLightColor: Int = ColorUtils.setAlphaComponent(specialTextColor, 50)
     private var specialTextFontFamily = textView.typeface
+    private var specialTextSize = textView.textSize
     private var underlinedSpecialText: Boolean = false
 
     fun setSpecialTextSeparator(separator: String): InteractiveTextMaker {
         specialWordSeparator = separator
+        return this
+    }
+
+    fun setSpecialTextSize(size: Float): InteractiveTextMaker {
+        specialTextSize = size
         return this
     }
 
@@ -82,6 +88,7 @@ class InteractiveTextMaker private constructor(
                     override fun updateDrawState(ds: TextPaint) {
                         super.updateDrawState(ds)
                         ds.isUnderlineText = underlinedSpecialText
+                        ds.textSize = specialTextSize
                         ds.typeface = specialTextFontFamily
                         ds.color = specialTextColor
                     }
