@@ -28,7 +28,7 @@ allprojects {
 Step 2. Add The InteractiveTextMaker Dependency
 ```
 dependencies {
-    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.0'
+    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.1'
 }
 ```
 
