@@ -1,4 +1,4 @@
-package com.example.interactivetextmaker
+package com.alonew0lfxx.interactivetextmaker
 
 import android.content.Context
 import android.text.SpannableString
