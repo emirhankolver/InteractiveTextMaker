@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InteractiveTextView">
+        <attr name="specialTextColor" format="color" />
+        <attr name="specialTextHighlightColor" format="color" />
+        <attr name="specialTextFontFamily" format="reference"/>
+        <attr name="specialTextSeparator" format="string"/>
+        <attr name="specialTextUnderlined" format="boolean"/>
+        <attr name="allTextUnderlined" format="boolean"/>
+        <attr name="specialTextSize" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding.textView.text = "How To __Make__ Clickable __Text__ In A __TextView__?"
         InteractiveTextMaker.of(binding.textView)
             .setSpecialTextColor(R.color.purple_500)
-            .setSpecialTextFontFamily(R.font.bold_italic)
+            .setSpecialTextFontFamilyRes(R.font.bold_italic)
             .setSpecialTextUnderLined(true)
             .setOnTextClickListener {
                 when (it) {
