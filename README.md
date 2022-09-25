@@ -18,7 +18,7 @@ You can copy the **InteractiveTextMaker** class or add as a dependency to your p
 
 Step 1. Add the JitPack repository to your build file
 
-```
+```gradle
 allprojects {
 	repositories {
 		...
@@ -29,7 +29,7 @@ allprojects {
 
 Step 2. Add The InteractiveTextMaker Dependency
 
-```
+```gradle
 dependencies {
     implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.3'
 }
@@ -39,7 +39,7 @@ dependencies {
 ## NEW! InteractiveTextView
 ##### You can also see the preview of your text with your special words processed.
 
-```
+```xml
 <com.alonew0lfxx.interactivetextmaker.InteractiveTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@ dependencies {
 
 ## Example Usage of InteractiveTextMaker
 
-```bash
+```kotlin
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
