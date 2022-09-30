@@ -31,7 +31,7 @@ Step 2. Add The InteractiveTextMaker Dependency
 
 ```gradle
 dependencies {
-    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.4'
+    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.5'
 }
 ```
 
