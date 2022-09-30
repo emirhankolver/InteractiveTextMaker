@@ -11,14 +11,20 @@ import androidx.core.content.withStyledAttributes
 class InteractiveTextView : AppCompatTextView {
 
     private val listeners = mutableListOf<(index: Int) -> Unit>()
+    private var attrs: AttributeSet? = null
 
     constructor(context: Context) : super(context)
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+        this.attrs = attrs
+    }
+
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
         context,
         attrs,
         defStyle
-    )
+    ) {
+        this.attrs = attrs
+    }
 
     @SuppressLint("SetTextI18n")
     fun initialize(context: Context, attrs: AttributeSet?) {
@@ -66,7 +72,7 @@ class InteractiveTextView : AppCompatTextView {
 
     override fun setText(text: CharSequence?, type: BufferType?) {
         super.setText(text, type)
-        initialize(context, null)
+        initialize(context, attrs)
     }
 
     /**
