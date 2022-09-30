@@ -5,9 +5,10 @@
 The goal of this project is to make texts in TextView clickable and also translatable easily.
 
 User separates each special word with separator characters like `"__"`
-and then when tapping all the custom words inside the TextView The `.setOnTextClickListener`
-function is called with the index of the touched word. In this way, sentences can be translated into
-other languages more easily and The locations of tactile sentences remain fixed in all languages.
+and then when tapping all the custom words inside the TextView The `.setOnTextClickListener`(InteractiveTextMaker) or 
+`addOnSpecialWordClickListener`(InteractiveTextView) function is called with the index of the touched word. 
+In this way, sentences can be translated into other languages more easily and The locations of tactile sentences
+remain fixed in all languages.
 
 Medium Article: https://medium.com/p/2b70e2072453
 
@@ -17,7 +18,7 @@ You can copy the **InteractiveTextMaker** class or add as a dependency to your p
 
 Step 1. Add the JitPack repository to your build file
 
-```
+```gradle
 allprojects {
 	repositories {
 		...
@@ -28,7 +29,7 @@ allprojects {
 
 Step 2. Add The InteractiveTextMaker Dependency
 
-```
+```gradle
 dependencies {
     implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.3'
 }
@@ -38,7 +39,7 @@ dependencies {
 ## NEW! InteractiveTextView
 ##### You can also see the preview of your text with your special words processed.
 
-```
+```xml
 <com.alonew0lfxx.interactivetextmaker.InteractiveTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +55,7 @@ dependencies {
 
 ## Example Usage of InteractiveTextMaker
 
-```bash
+```kotlin
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
