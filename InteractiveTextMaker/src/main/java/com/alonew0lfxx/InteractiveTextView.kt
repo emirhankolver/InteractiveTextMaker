@@ -1,4 +1,4 @@
-package com.alonew0lfxx.interactivetextmaker
+package com.alonew0lfxx
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,21 +12,13 @@ class InteractiveTextView : AppCompatTextView {
 
     private val listeners = mutableListOf<(index: Int) -> Unit>()
 
-    constructor(context: Context) : super(context) {
-        initialize(context, null)
-    }
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        initialize(context, attrs)
-    }
-
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
         context,
         attrs,
         defStyle
-    ) {
-        initialize(context, attrs)
-    }
+    )
 
     @SuppressLint("SetTextI18n")
     fun initialize(context: Context, attrs: AttributeSet?) {
@@ -70,6 +62,11 @@ class InteractiveTextView : AppCompatTextView {
                 .setOnTextClickListener { index -> listeners.forEach { it(index) } }
                 .initialize()
         }
+    }
+
+    override fun setText(text: CharSequence?, type: BufferType?) {
+        super.setText(text, type)
+        initialize(context, null)
     }
 
     /**

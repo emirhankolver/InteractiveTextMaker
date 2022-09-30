@@ -3,7 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.alonew0lfxx.interactivetextmaker.InteractiveTextMaker
+import com.alonew0lfxx.InteractiveTextMaker
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             .initialize()
+        binding.bUpdate.setOnClickListener {
+            binding.textView.text = "Hello this is __updated__ text!"
+        }
         setContentView(binding.root)
     }
 }

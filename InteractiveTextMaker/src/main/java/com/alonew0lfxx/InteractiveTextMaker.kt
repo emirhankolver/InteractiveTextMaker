@@ -1,4 +1,4 @@
-package com.alonew0lfxx.interactivetextmaker
+package com.alonew0lfxx
 
 import android.content.Context
 import android.graphics.Typeface

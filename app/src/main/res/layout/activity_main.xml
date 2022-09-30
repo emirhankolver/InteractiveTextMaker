@@ -4,16 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.alonew0lfxx.interactivetextmaker.InteractiveTextView
+    <com.alonew0lfxx.InteractiveTextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
         android:fontFamily="@font/bold"
-        app:specialTextUnderlined="true"
-        android:text="How To __Make__ Clickable __Text__ In A __TextView__?" />
+        android:text="How To __Make__ Clickable __Text__ In A __TextView__?"
+        android:textSize="16sp"
+        app:specialTextUnderlined="true" />
+
+
+    <Button
+        android:id="@+id/bUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Update Text" />
 
 </LinearLayout>
