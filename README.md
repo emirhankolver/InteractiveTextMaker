@@ -31,7 +31,7 @@ Step 2. Add The InteractiveTextMaker Dependency
 
 ```gradle
 dependencies {
-    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.6'
+    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.7'
 }
 ```
 
@@ -40,7 +40,7 @@ dependencies {
 ##### You can also see the preview of your text with your special words processed.
 
 ```xml
-<com.alonew0lfxx.interactivetextmaker.InteractiveTextView
+<com.alonew0lfxx.itm.InteractiveTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"

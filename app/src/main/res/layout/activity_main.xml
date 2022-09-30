@@ -13,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bold"
+        app:specialTextColor="@color/black"
+        app:specialTextFontFamily="@font/bold"
         android:text="How To __Make__ Clickable __Text__ In A __TextView__?"
         android:textSize="16sp"
         app:specialTextUnderlined="true" />

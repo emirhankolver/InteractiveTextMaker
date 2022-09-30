@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
             .initialize()
         binding.bUpdate.setOnClickListener {
-            binding.textView.text = "Hello this is __updated__ text!"
+            binding.textView.text = ("Hello this is __updated__ text!")
         }
         setContentView(binding.root)
     }
