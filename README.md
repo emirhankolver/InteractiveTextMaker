@@ -1,6 +1,6 @@
 # Interactive Text Maker
 
-![Header Image](https://github.com/Alonew0lfxx/InteractiveTextMaker/blob/master/screenshots/sc2.png?raw=true)
+![Header Image](https://github.com/emirhankolver/InteractiveTextMaker/blob/master/screenshots/sc2.png?raw=true)
 
 The goal of this project is to make texts in TextView clickable and also translatable easily.
 
@@ -31,7 +31,7 @@ Step 2. Add The InteractiveTextMaker Dependency
 
 ```gradle
 dependencies {
-    implementation 'com.github.Alonew0lfxx:InteractiveTextMaker:1.0.7'
+    implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.7'
 }
 ```
 
@@ -40,7 +40,7 @@ dependencies {
 ##### You can also see the preview of your text with your special words processed.
 
 ```xml
-<com.alonew0lfxx.itm.InteractiveTextView
+<com.emirhankolver.itm.InteractiveTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -50,7 +50,7 @@ dependencies {
 ```
 
 ## InteractiveTextView Result
-![App Screenshot](https://github.com/Alonew0lfxx/InteractiveTextMaker/blob/master/screenshots/sc3.png?raw=true)
+![App Screenshot](https://github.com/emirhankolver/InteractiveTextMaker/blob/master/screenshots/sc3.png?raw=true)
 
 
 ## Example Usage of InteractiveTextMaker
