@@ -1,8 +1,7 @@
-package com.alonew0lfxx.itm
+package com.emirhankolver.itm
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Canvas
 import android.graphics.Typeface
 import android.util.AttributeSet
 import android.util.Log
@@ -60,7 +59,7 @@ class InteractiveTextView(
             }
             Log.d(TAG, "specialTextSeparator: $specialTextSeparator")
         }
-        initialize(context)
+        initialize()
     }
 
 
@@ -74,7 +73,7 @@ class InteractiveTextView(
      *
      */
     @SuppressLint("SetTextI18n")
-    fun initialize(context: Context) {
+    fun initialize() {
         Log.d(TAG, "initialize() called with: $specialTextSeparator")
         if (allTextUnderlined == null) return
         if (specialTextColor == null) return
@@ -109,7 +108,7 @@ class InteractiveTextView(
         if (this::previousString.isInitialized && previousString == text) return
         previousString = text.toString()
         super.setText(text, type)
-        initialize(context)
+        initialize()
     }
 
 

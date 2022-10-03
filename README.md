@@ -20,8 +20,8 @@ Please update your Build.gradle(App) file as following
 
 ```gradle
 dependencies {
-    // implementation 'com.github.alonew0lfxx:InteractiveTextMaker:1.0.7' Uses old username
-    implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.7'
+    // implementation 'com.github.alonew0lfxx:InteractiveTextMaker:1.0.8' Uses old username
+    implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.8'
 }
 ```
 
@@ -44,7 +44,7 @@ Step 2. Add The InteractiveTextMaker Dependency
 
 ```gradle
 dependencies {
-    implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.7'
+    implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.8'
 }
 ```
 

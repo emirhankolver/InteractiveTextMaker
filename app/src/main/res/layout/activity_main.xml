@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.alonew0lfxx.itm.InteractiveTextView
+    <com.emirhankolver.itm.InteractiveTextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
