@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ## InteractiveTextMaker Result
-![App Screenshot](https://github.com/Alonew0lfxx/InteractiveTextMaker/blob/master/screenshots/sc1.png?raw=true)
+![App Screenshot](https://github.com/emirhankolver/InteractiveTextMaker/blob/master/screenshots/sc1.png?raw=true)
 
 ## License
 
