@@ -12,6 +12,19 @@ remain fixed in all languages.
 
 Medium Article: https://medium.com/p/2b70e2072453
 
+
+## Note
+I've been changed my github username from ``alonew0lfxx`` to ``emirhankolver``.
+So if you're experiencing problems about from my dependency. 
+Please update your Build.gradle(App) file as following
+
+```gradle
+dependencies {
+    // implementation 'com.github.alonew0lfxx:InteractiveTextMaker:1.0.7' Uses old username
+    implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.7'
+}
+```
+
 ## Installation
 
 You can copy the **InteractiveTextMaker** class or add as a dependency to your project.
