@@ -2,45 +2,42 @@
 
 ![Header Image](https://github.com/emirhankolver/InteractiveTextMaker/blob/master/screenshots/sc2.png?raw=true)
 
-The goal of this project is to make texts in TextView clickable and also translatable easily.
+## Overview
+Interactive Text Maker allows you to create clickable and translatable texts in a `TextView` with ease. By marking special words with separator characters like `"__"`, users can tap on them, triggering a callback function that returns the index of the clicked word. This ensures:
+- Seamless translation while maintaining the structure of tactile words across languages.
+- Easy implementation of interactive text features without complex span management.
 
-User separates each special word with separator characters like `"__"`
-and then when tapping all the custom words inside the TextView The `.setOnTextClickListener`(InteractiveTextMaker) or 
-`addOnSpecialWordClickListener`(InteractiveTextView) function is called with the index of the touched word. 
-In this way, sentences can be translated into other languages more easily and The locations of tactile sentences
-remain fixed in all languages.
+[Medium Article](https://medium.com/p/2b70e2072453)
 
-Medium Article: https://medium.com/p/2b70e2072453
+---
 
-
-## Note
-I've been changed my github username from ``alonew0lfxx`` to ``emirhankolver``.
-So if you're experiencing problems about from my dependency. 
-Please update your Build.gradle(App) file as following
+## 🔄 Update Notice
+If you previously used my dependency under the username `alonew0lfxx`, please update your `build.gradle` file to reflect my new username `emirhankolver`:
 
 ```gradle
 dependencies {
-    // implementation 'com.github.alonew0lfxx:InteractiveTextMaker:1.0.8' Uses old username
+    // OLD: implementation 'com.github.alonew0lfxx:InteractiveTextMaker:1.0.8'
     implementation 'com.github.emirhankolver:InteractiveTextMaker:1.0.8'
 }
 ```
 
-## Installation
+---
 
-You can copy the **InteractiveTextMaker** class or add as a dependency to your project.
-
-Step 1. Add the JitPack repository to your build file
+## 🚀 Installation
+### Step 1: Add JitPack Repository
+Ensure you have JitPack in your `build.gradle` (Project-level):
 
 ```gradle
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
 }
 ```
 
-Step 2. Add The InteractiveTextMaker Dependency
+### Step 2: Add the Dependency
+Add the InteractiveTextMaker dependency in your `build.gradle` (App-level):
 
 ```gradle
 dependencies {
@@ -48,33 +45,41 @@ dependencies {
 }
 ```
 
+---
 
-## NEW! InteractiveTextView
-##### You can also see the preview of your text with your special words processed.
+## ✨ New Feature: InteractiveTextView
+### 🖥️ Real-Time Preview of Your Special Words
+You can now use `InteractiveTextView` to directly display and preview clickable words in XML without additional setup.
 
+#### XML Usage:
 ```xml
 <com.emirhankolver.itm.InteractiveTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:fontFamily="@font/bold"
-        app:specialTextUnderlined="true"
-        android:text="How To __Make__ Clickable __Text__ In A __TextView__?" />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:fontFamily="@font/bold"
+    app:specialTextUnderlined="true"
+    android:text="How To __Make__ Clickable __Text__ In A __TextView__?" />
 ```
 
-## InteractiveTextView Result
+### InteractiveTextView Output:
 ![App Screenshot](https://github.com/emirhankolver/InteractiveTextMaker/blob/master/screenshots/sc3.png?raw=true)
 
+---
 
-## Example Usage of InteractiveTextMaker
+## 🛠 Example Usage of InteractiveTextMaker
+You can implement InteractiveTextMaker in Kotlin to add interactivity to `TextView` dynamically.
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        
         binding.textView.text = "How To __Make__ Clickable __Text__ In A __TextView__?"
+        
         InteractiveTextMaker.of(binding.textView)
             .setSpecialTextColor(R.color.purple_500)
             .setSpecialTextFontFamily(R.font.bold_italic)
@@ -83,20 +88,26 @@ class MainActivity : AppCompatActivity() {
                 when (it) {
                     0 -> Toast.makeText(this, "'Make' has been clicked", Toast.LENGTH_SHORT).show()
                     1 -> Toast.makeText(this, "'Text' has been clicked", Toast.LENGTH_SHORT).show()
-                    2 -> Toast.makeText(this, "'TextView' has been clicked", Toast.LENGTH_SHORT)
-                        .show()
+                    2 -> Toast.makeText(this, "'TextView' has been clicked", Toast.LENGTH_SHORT).show()
                 }
             }
             .initialize()
+
         setContentView(binding.root)
     }
 }
 ```
 
-## InteractiveTextMaker Result
+### InteractiveTextMaker Output:
 ![App Screenshot](https://github.com/emirhankolver/InteractiveTextMaker/blob/master/screenshots/sc1.png?raw=true)
 
-## License
+---
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## 📜 License
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
+---
+
+### 💡 Contributions & Feedback
+Feel free to open an issue or contribute via pull requests!
+Happy coding! 🚀
